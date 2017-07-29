@@ -3,7 +3,7 @@
 session_start();
 $email=$_POST['email'];
 $pass=$_POST['password'];
-$mng = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+include('config.php');
 $filter = ['email' => $email, 'password' => $pass ];
 $query = new MongoDB\Driver\Query($filter);
 $res = $mng->executeQuery("cfg8.volunteer", $query);
@@ -16,5 +16,5 @@ else
   echo "false";if(isset($_POST['action']))
   unset($_SESSION['email']);if(isset($_POST['action']))
   unset($_SESSION['email']);
-$statement->close();
+
 ?>

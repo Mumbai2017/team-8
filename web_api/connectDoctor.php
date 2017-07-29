@@ -1,10 +1,9 @@
 <?php
 
 session_start();
+include('config.php');
 $email=$_POST['email'];
 $pass=$_POST['password'];
-
-$mng = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 $filter = ['email' => $email, 'password' => $pass ];
 $query = new MongoDB\Driver\Query($filter);
 $res = $mng->executeQuery("cfg8.doctor", $query);
@@ -21,7 +20,7 @@ if(isset($_POST['action']))
 
 if(isset($_POST['action']))
    unset($_SESSION['email']);
-$statement->close();
+
 
 ?>
 

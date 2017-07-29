@@ -7,7 +7,7 @@ $email=$_POST['email'];
 $pass=$_POST['password'];
 $coll = 'cfg8.doctor';
 
-$mng = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+include('config.php');
 $filter = ['email' => $email, 'password' => $pass ];
 $query = new MongoDB\Driver\Query($filter);
 $res = $mng->executeQuery($coll, $query);
