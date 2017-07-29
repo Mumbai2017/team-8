@@ -1,5 +1,6 @@
 package com.example.pratikaher.makeawish;
 
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,6 +18,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
+import static android.R.attr.data;
 import static android.R.id.content;
 
 /**
@@ -49,97 +52,94 @@ public class DoctorFragment extends Fragment {
     }
 
     // Create GetText Metod
-    public  void  GetText()  throws UnsupportedEncodingException
-    {
+    public  void  GetText()  throws UnsupportedEncodingException {
         // Get user defined values
-        String name = layoutinflater.findViewById(R.id.name).toString();
-        String pid = layoutinflater.findViewById(R.id.pid).toString();
-        String pname = layoutinflater.findViewById(R.id.pname).toString();
-        String docname = layoutinflater.findViewById(R.id.docname).toString();
-        String ill = layoutinflater.findViewById(R.id.ill).toString();
-        String dob = layoutinflater.findViewById(R.id.dob).toString();
-        String doc_id = layoutinflater.findViewById(R.id.doc_id)
+        final EditText name = (EditText)layoutinflater.findViewById(R.id.name);
+        final EditText pid = (EditText)layoutinflater.findViewById(R.id.pid);
+        final EditText pname = (EditText)layoutinflater.findViewById(R.id.pname);
+        final EditText docname = (EditText)layoutinflater.findViewById(R.id.docname);
+        final EditText ill = (EditText)layoutinflater.findViewById(R.id.ill);
+        final EditText dob = (EditText)layoutinflater.findViewById(R.id.dob);
+        final EditText doc_id = (EditText)layoutinflater.findViewById(R.id.doc_id);
+
 
 
         // Create data variable for sent values to server
+        class DownloadFilesTask extends AsyncTask<URL, Integer, Long> {
 
-        String data = URLEncoder.encode("parent_id", "UTF-8")
-                + "=" + URLEncoder.encode(pid, "UTF-8");
 
-        data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
-                + URLEncoder.encode(name, "UTF-8");
 
-        data += "&" + URLEncoder.encode("parent_name", "UTF-8")
-                + "=" + URLEncoder.encode(pname, "UTF-8");
+            @Override
+            protected Long doInBackground(URL... params) {
+                try {
+                    String data = URLEncoder.encode("parent_id", "UTF-8")
+                            + "=" + URLEncoder.encode(String.valueOf(pid), "UTF-8");
 
-        data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
-                + "=" + URLEncoder.encode(docname, "UTF-8");
+                    data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
+                            + URLEncoder.encode(String.valueOf(name), "UTF-8");
 
-        data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
-                + "=" + URLEncoder.encode(doc_id, "UTF-8");
+                    data += "&" + URLEncoder.encode("parent_name", "UTF-8")
+                            + "=" + URLEncoder.encode(String.valueOf(pname), "UTF-8");
 
-        data += "&" + URLEncoder.encode("dob", "UTF-8")
-                + "=" + URLEncoder.encode(dob, "UTF-8");
+                    data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
+                            + "=" + URLEncoder.encode(String.valueOf(docname), "UTF-8");
 
-        data += "&" + URLEncoder.encode("ill", "UTF-8")
-                + "=" + URLEncoder.encode(ill, "UTF-8");
+                    data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
+                            + "=" + URLEncoder.encode(String.valueOf(doc_id), "UTF-8");
 
-        String text = "";
-        BufferedReader reader=null;
+                    data += "&" + URLEncoder.encode("dob", "UTF-8")
+                            + "=" + URLEncoder.encode(String.valueOf(dob), "UTF-8");
 
-        // Send data
-        try
-        {
+                    data += "&" + URLEncoder.encode("ill", "UTF-8")
+                            + "=" + URLEncoder.encode(ill, "UTF-8");
+                }
+                catch(Exception e){}
 
-            // Defined URL  where to send data
-            URL url = new URL("13.126.178.24/cfg/add_child");
+                String text = "";
+                BufferedReader reader = null;
 
-            // Send POST data request
+                // Send data
+                try {
 
-            URLConnection conn = url.openConnection();
-            conn.setDoOutput(true);
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-            wr.write( data );
-            wr.flush();
+                    // Defined URL  where to send data
+                    URL url = new URL("13.126.178.24/cfg/add_child");
 
-            // Get the server response
+                    // Send POST data request
 
-            reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            StringBuilder sb = new StringBuilder();
-            String line = null;
+                    URLConnection conn = url.openConnection();
+                    conn.setDoOutput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                    wr.write(data);
+                    wr.flush();
 
-            // Read Server Response
-            while((line = reader.readLine()) != null)
-            {
-                // Append server response in string
-                sb.append(line + "\n");
+                    // Get the server response
+
+                    reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+
+                    // Read Server Response
+                    while ((line = reader.readLine()) != null) {
+                        // Append server response in string
+                        sb.append(line + "\n");
+                    }
+
+
+                    text = sb.toString();
+                } catch (Exception ex) {
+
+                } finally {
+                    try {
+
+                        reader.close();
+                    } catch (Exception ex) {
+                    }
+                }
+                return null;
             }
-
-
-            text = sb.toString();
         }
-        catch(Exception ex)
-        {
-
-        }
-        finally
-        {
-            try
-            {
-
-                reader.close();
-            }
-
-            catch(Exception ex) {}
-        }
-
         // Show response on activity
-
-
-    }
-
-
-
 
     }
 }
+
