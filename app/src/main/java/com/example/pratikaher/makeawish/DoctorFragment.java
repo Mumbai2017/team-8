@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,13 @@ public class DoctorFragment extends Fragment {
         final EditText ill = (EditText)layoutinflater.findViewById(R.id.ill);
         final EditText dob = (EditText)layoutinflater.findViewById(R.id.dob);
         final EditText doc_id = (EditText)layoutinflater.findViewById(R.id.doc_id);
+        final String childname=name.getText().toString();
+        final String parentid=pid.getText().toString();
+        final String parentname=pname.getText().toString();
+        final String doctorname=docname.getText().toString();
+        final String illness=ill.getText().toString();
+        final String dateofbirth=dob.getText().toString();
+        final String doctorid=doc_id.getText().toString();
 
 
 
@@ -71,27 +79,28 @@ public class DoctorFragment extends Fragment {
 
             @Override
             protected Long doInBackground(URL... params) {
+                String data="";
                 try {
-                    String data = URLEncoder.encode("parent_id", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(pid), "UTF-8");
+                    data = URLEncoder.encode("parent_id", "UTF-8")
+                            + "=" + URLEncoder.encode(parentid, "UTF-8");
 
                     data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
-                            + URLEncoder.encode(String.valueOf(name), "UTF-8");
+                            + URLEncoder.encode(childname, "UTF-8");
 
                     data += "&" + URLEncoder.encode("parent_name", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(pname), "UTF-8");
+                            + "=" + URLEncoder.encode(parentname, "UTF-8");
 
                     data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(docname), "UTF-8");
+                            + "=" + URLEncoder.encode(doctorname, "UTF-8");
 
                     data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(doc_id), "UTF-8");
+                            + "=" + URLEncoder.encode(doctorid, "UTF-8");
 
                     data += "&" + URLEncoder.encode("dob", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(dob), "UTF-8");
+                            + "=" + URLEncoder.encode(dateofbirth, "UTF-8");
 
                     data += "&" + URLEncoder.encode("ill", "UTF-8")
-                            + "=" + URLEncoder.encode(ill, "UTF-8");
+                            + "=" + URLEncoder.encode(illness, "UTF-8");
                 }
                 catch(Exception e){}
 
@@ -102,7 +111,7 @@ public class DoctorFragment extends Fragment {
                 try {
 
                     // Defined URL  where to send data
-                    URL url = new URL("13.126.178.24/cfg/add_child");
+                    URL url = new URL("13.126.178.24/cfg/add_child.php");
 
                     // Send POST data request
 
@@ -126,6 +135,7 @@ public class DoctorFragment extends Fragment {
 
 
                     text = sb.toString();
+                    Log.d("text",text);
                 } catch (Exception ex) {
 
                 } finally {

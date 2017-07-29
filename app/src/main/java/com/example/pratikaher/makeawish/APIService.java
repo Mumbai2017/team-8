@@ -2,6 +2,8 @@ package com.example.pratikaher.makeawish;
 
 import com.example.pratikaher.makeawish.AllPOJO.VolunteerPOJOClass;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.http.Body;
@@ -16,8 +18,8 @@ import retrofit2.http.Path;
 
 public interface APIService {
 
-//    @GET("/cfg/fetch_child_no_wish.php")
-//    public void getdata(Callback<BeerResponse> callback);
+    @GET("cfg/fetch_child_no_wish.php")
+    Call<List<BeerResponse>> getdata();
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
     @POST("/users/newuser")

@@ -43,29 +43,24 @@ public class DoctorHistory extends Fragment{
         Retrofit retrofit=new Retrofit.Builder()
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://13.126.178.24/")
+                .baseUrl("http://13.126.178.24")
                 .build();
 
         APIService apiServiceClass=retrofit.create(APIService.class);
 
-        apiServiceClass.getStreams().enqueue(new Callback<BeerResponse>() {
-            @Override
-            public void onResponse(Call<BeerResponse> call, Response<BeerResponse> response) {
-               String s= response.body().getBeers().get(0).getParentId();
-                Log.d("final",s);
+        Call<List<BeerResponse>> getinfo=apiServiceClass.getdata();
 
+        getinfo.enqueue(new Callback<List<BeerResponse>>() {
+            @Override
+            public void onResponse(Call<List<BeerResponse>> call, Response<List<BeerResponse>> response) {
+                Log.d("Error",response.body().get(0).getBeers().get(0).getChildName());
             }
 
             @Override
-            public void onFailure(Call<BeerResponse> call, Throwable t) {
+            public void onFailure(Call<List<BeerResponse>> call, Throwable t) {
 
             }
         });
-
-
-
-
-
 
         layoutinflater = inflater.inflate(R.layout.doctor_history, container, false);
         recyclerView=(RecyclerView) layoutinflater.findViewById(R.id.recyclerview);
