@@ -135,22 +135,43 @@
                     />
             </TableRow>
 
+            <TableRow>
+                <TextView
+                    android:text="Docotor ID"
+                    android:textSize="25dp"
+
+                    />
+                <TextView
+                    android:text=":"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="25dp"
+
+                    />
+                <EditText
+                    android:id="@+id/doc_id"
+                    android:inputType="text"
+                    android:layout_weight="0.1"
+                    android:textSize="25dp"
+                    android:hint=""
+                    />
+            </TableRow>
+
 
         </TableLayout>
 
-        <Button
+    <Button
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="SUBMIT"
-            android:textSize="25dp"
-            android:padding="25dp"
-            android:id="@+id/submit_btn"
-            android:layout_marginTop="15dp"
-            />
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:padding="25dp"
+        android:text="SUBMIT"
+        android:textSize="25dp" />
 
-        <Button
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="GO BACK"
