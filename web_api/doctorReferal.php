@@ -13,7 +13,7 @@ $wish2 = $POST['wish2'];
 $wish3 = $POST['wish3'];                   
 $coll = 'cfg8.child';
 
-include('config.php');
+include'config.php';
 $filter = ['email' => $doc_email];
 $query = new MongoDB\Driver\Query($filter);
 $res = $mng->executeQuery($coll, $query);

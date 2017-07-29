@@ -3,7 +3,7 @@
 session_start();
 $email=$_POST['email'];
 $pass=$_POST['password'];
-include('config.php');
+include'config.php';
 $filter = ['email' => $email, 'password' => $pass ];
 $query = new MongoDB\Driver\Query($filter);
 $res = $mng->executeQuery("cfg8.volunteer", $query);

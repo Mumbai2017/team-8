@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include('config.php');
+include'config.php';
 $email=$_POST['email'];
 $pass=$_POST['password'];
 $filter = ['email' => $email, 'password' => $pass ];

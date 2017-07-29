@@ -6,7 +6,7 @@ $wish1=$_POST['wish1'];
 $wish2=$_POST['wish2'];
 $wish3=$_POST['wish3'];
 $rush=$_POST['rush'];
-include('config.php');
+include'config.php';
 $filter = ['email' => $email,];
 $query = new MongoDB\Driver\Query($filter);
 $coll = 'cgf8.volunteer';

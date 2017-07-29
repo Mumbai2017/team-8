@@ -8,7 +8,7 @@ $dob=$_POST['dob'];
 $password=$_POST['password'];
 $credits=0;
 $joindate=$_POST['joindate'];
-$mng = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+include'config.php';
 $filter = ['email' => $email,];
 $query = new MongoDB\Driver\Query($filter);
 $coll = 'cgf8.volunteer';
