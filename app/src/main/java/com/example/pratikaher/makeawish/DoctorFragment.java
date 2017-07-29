@@ -8,7 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 
 import static android.R.id.content;
 
@@ -39,6 +45,7 @@ public class DoctorFragment extends Fragment {
                 }
             }
         });
+        return layoutinflater;
     }
 
     // Create GetText Metod
@@ -50,19 +57,32 @@ public class DoctorFragment extends Fragment {
         String pname = layoutinflater.findViewById(R.id.pname).toString();
         String docname = layoutinflater.findViewById(R.id.docname).toString();
         String ill = layoutinflater.findViewById(R.id.ill).toString();
+        String dob = layoutinflater.findViewById(R.id.dob).toString();
+        String doc_id = layoutinflater.findViewById(R.id.doc_id)
+
+
         // Create data variable for sent values to server
 
-        String data = URLEncoder.encode("name", "UTF-8")
-                + "=" + URLEncoder.encode(Name, "UTF-8");
+        String data = URLEncoder.encode("parent_id", "UTF-8")
+                + "=" + URLEncoder.encode(pid, "UTF-8");
 
-        data += "&" + URLEncoder.encode("email", "UTF-8") + "="
-                + URLEncoder.encode(Email, "UTF-8");
+        data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
+                + URLEncoder.encode(name, "UTF-8");
 
-        data += "&" + URLEncoder.encode("user", "UTF-8")
-                + "=" + URLEncoder.encode(Login, "UTF-8");
+        data += "&" + URLEncoder.encode("parent_name", "UTF-8")
+                + "=" + URLEncoder.encode(pname, "UTF-8");
 
-        data += "&" + URLEncoder.encode("pass", "UTF-8")
-                + "=" + URLEncoder.encode(Pass, "UTF-8");
+        data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
+                + "=" + URLEncoder.encode(docname, "UTF-8");
+
+        data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
+                + "=" + URLEncoder.encode(doc_id, "UTF-8");
+
+        data += "&" + URLEncoder.encode("dob", "UTF-8")
+                + "=" + URLEncoder.encode(dob, "UTF-8");
+
+        data += "&" + URLEncoder.encode("ill", "UTF-8")
+                + "=" + URLEncoder.encode(ill, "UTF-8");
 
         String text = "";
         BufferedReader reader=null;
@@ -72,7 +92,7 @@ public class DoctorFragment extends Fragment {
         {
 
             // Defined URL  where to send data
-            URL url = new URL("http://androidexample.com/media/webservice/httppost.php");
+            URL url = new URL("13.126.178.24/cfg/add_child");
 
             // Send POST data request
 
@@ -114,12 +134,12 @@ public class DoctorFragment extends Fragment {
         }
 
         // Show response on activity
-        content.setText( text  );
+
 
     }
 
 
-        return layoutinflater;
+
 
     }
 }
