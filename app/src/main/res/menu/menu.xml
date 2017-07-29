@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/doctor_home"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/doctor_home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/doctor_history"
+        android:enabled="true"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="@string/doctor_history"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/doctor_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_details_black_24dp"
+        android:title="@string/doctor_profile"
+        app:showAsAction="ifRoom" />
+</menu>
