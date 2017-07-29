@@ -1,7 +1,9 @@
 <?php
 
-$mng = new MongoDB\Driver\Manager("mongodb://13.229.56.128:27017");
-$coll = 'cgf.child';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "cfg";
+$con = mysqli_connect($servername, $username, $password, $dbname);
 
-echo "$coll->child"
 ?>
