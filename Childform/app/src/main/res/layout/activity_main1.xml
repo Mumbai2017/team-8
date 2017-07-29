@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <TextView
+                android:text="Name"
+                android:textSize="25dp"
+                
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+               
+                />
+            <EditText
+                android:id="@+id/name"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:hint=""
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Date of birth"
+                android:textSize="25dp"
+                
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+                
+                />
+            <EditText
+                android:id="@+id/dob"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:maxLength="10"
+                android:hint=""
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Illness"
+                android:textSize="25dp"
+                
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+                
+                />
+            <EditText
+                android:id="@+id/ill"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:hint=""
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Doctor name"
+                android:textSize="25dp"
+                
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+                
+                />
+            <EditText
+                android:id="@+id/docname"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:hint=""
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Parent Name"
+                android:textSize="25dp"
+                
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+                
+                />
+            <EditText
+                android:id="@+id/pname"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:hint=""
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="Parent ID"
+                android:textSize="25dp"
+
+                />
+            <TextView
+                android:text=":"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="25dp"
+
+                />
+            <EditText
+                android:id="@+id/pid"
+                android:inputType="text"
+                android:layout_weight="0.1"
+                android:textSize="25dp"
+                android:hint=""
+                />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="SUBMIT"
+        android:textSize="25dp"
+        android:padding="25dp"
+        android:id="@+id/button"
+        android:layout_marginTop="15dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO BACK"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"
+        android:padding="35dp"
+        android:id="@+id/button1"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        />
+</LinearLayout>
