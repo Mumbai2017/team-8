@@ -35,7 +35,7 @@
             android:id="@+id/volunteerName_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volunteer Name:"
+            android:text=" Name:"
             android:textSize="20dp"
             android:layout_column="1"
             />
@@ -59,7 +59,7 @@
             android:id="@+id/volunteerEmail_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volunteer Email:"
+            android:text=" Email:"
             android:textSize="20dp"
             android:layout_column="1"
             />
@@ -83,7 +83,7 @@
             android:id="@+id/volunteerJoining_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Volunteer Joining Date:"
+            android:text=" Joining Date:"
             android:textSize="20dp"
             android:layout_column="1"
             />
@@ -98,6 +98,29 @@
 
     </TableRow>
 
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <TextView
+            android:id="@+id/volunteerCredits_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credits Earned:"
+            android:textSize="20dp"
+            android:layout_column="1"
+            />
+
+        <TextView
+            android:id="@+id/volunteerCredits_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text=""
+            android:layout_column="2" />
+
+    </TableRow>
 
 
 
