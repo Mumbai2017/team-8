@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Makeawish.iml" filepath="$PROJECT_DIR$/Makeawish.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/make.iml" filepath="$PROJECT_DIR$/make.iml" />
       <module fileurl="file://$PROJECT_DIR$/team-8.iml" filepath="$PROJECT_DIR$/team-8.iml" />
     </modules>
   </component>

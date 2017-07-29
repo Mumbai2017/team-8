@@ -18,12 +18,12 @@
             android:layout_height="70dp"
             android:orientation="vertical"
             >
-        <TextView
-            android:id="@+id/info_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Child Name:"/>
+            <TextView
+                android:id="@+id/info_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Child Name:"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,6 +31,6 @@
                 android:id="@+id/childname"/>
         </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

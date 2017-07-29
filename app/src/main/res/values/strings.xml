@@ -3,4 +3,12 @@
     <string name="doctor_home">Home</string>
     <string name="doctor_history">History</string>
     <string name="doctor_profile">Profile</string>
+    <string name="volunteer_feed">Feed</string>
+    <string name="volunterr_form">Form</string>
+    <string name="volunteer_details">Profile</string>
+    <string name="donorfeed">Feed</string>
+    <string name="donor_sucess">Success</string>
+    <string name="donor_details">Details</string>
+    <string name="donor_cart">Cart</string>
+
 </resources>

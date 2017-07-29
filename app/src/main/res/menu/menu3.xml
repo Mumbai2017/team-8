@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/donorfeed"
+        android:enabled="true"
+        android:icon="@drawable/ic_rss_feed_black_24dp"
+        android:title="@string/donorfeed"
+        app:showAsAction="ifRoom" />
+    <item
+    android:id="@+id/donorcart"
+    android:enabled="true"
+    android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+    android:title="@string/donor_cart"
+    app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/donorsuccess"
+        android:enabled="true"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="@string/donor_sucess"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/donordetails"
+        android:enabled="true"
+        android:icon="@drawable/ic_details_black_24dp"
+        android:title="@string/donor_details"
+        app:showAsAction="ifRoom" />
+</menu>
