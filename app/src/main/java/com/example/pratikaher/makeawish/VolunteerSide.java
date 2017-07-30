@@ -1,51 +1,55 @@
 package com.example.pratikaher.makeawish;
 
-import android.support.v4.app.FragmentTransaction;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by pratikaher on 29/07/17.
+ */
+
+public class VolunteerSide extends AppCompatActivity {
+
 
     FragmentManager manager = getSupportFragmentManager();
 
-//    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+    //    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
 //    android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-    DoctorFragment fragment = new DoctorFragment();
-    DoctorHistory doctorHistory=new DoctorHistory();
-    DoctorProfile doctorProfile=new DoctorProfile();
+    VolunteerForm volunteerForm = new VolunteerForm();
+    VoulteerFeed volunteerfeed=new VoulteerFeed();
+    VolunteerDetails voulunteerprofile=new VolunteerDetails();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.volunteermain);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
 
-        manager.beginTransaction().replace(R.id.home_fragment,fragment).commit();
+        manager.beginTransaction().replace(R.id.home_fragment,volunteerfeed).commit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.doctor_home:
-                                manager.beginTransaction().replace(R.id.home_fragment,fragment).commit();
+                            case R.id.volunteerfeed:
+                                manager.beginTransaction().replace(R.id.home_fragment,volunteerfeed).commit();
                                 break;
 
-                            case R.id.doctor_history:
-                                manager.beginTransaction().replace(R.id.home_fragment,doctorHistory).commit();
+                            case R.id.volunteerform:
+                                manager.beginTransaction().replace(R.id.home_fragment,volunteerForm).commit();
                                 break;
 
-                            case R.id.doctor_profile:
-                                manager.beginTransaction().replace(R.id.home_fragment,doctorProfile).commit();
+                            case R.id.volunteerdetails:
+                                manager.beginTransaction().replace(R.id.home_fragment,voulunteerprofile).commit();
                                 break;
                         }
-                    return true;
+                        return true;
                     }
                 });
     }

@@ -1,51 +1,56 @@
 package com.example.pratikaher.makeawish;
 
-import android.support.v4.app.FragmentTransaction;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by pratikaher on 30/07/17.
+ */
 
+public class DonorSide extends AppCompatActivity {
     FragmentManager manager = getSupportFragmentManager();
-
 //    android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
 //    android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-    DoctorFragment fragment = new DoctorFragment();
-    DoctorHistory doctorHistory=new DoctorHistory();
-    DoctorProfile doctorProfile=new DoctorProfile();
+    DonorFeed donorFeed = new DonorFeed();
+//    DonorProfile donorProfile=new DonorProfile();
+//    DonorCart donorCart=new DonorCart();
+    DonorSuccess donorSuccess=new DonorSuccess();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.donormain);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
 
-        manager.beginTransaction().replace(R.id.home_fragment,fragment).commit();
+        manager.beginTransaction().replace(R.id.home_fragment,donorFeed).commit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.doctor_home:
-                                manager.beginTransaction().replace(R.id.home_fragment,fragment).commit();
+                            case R.id.donorfeed:
+                                manager.beginTransaction().replace(R.id.home_fragment,donorFeed).commit();
                                 break;
 
-                            case R.id.doctor_history:
-                                manager.beginTransaction().replace(R.id.home_fragment,doctorHistory).commit();
+                            case R.id.donorcart:
+//                                manager.beginTransaction().replace(R.id.home_fragment,doctorHistory).commit();
                                 break;
 
-                            case R.id.doctor_profile:
-                                manager.beginTransaction().replace(R.id.home_fragment,doctorProfile).commit();
+                            case R.id.donordetails:
+//                                manager.beginTransaction().replace(R.id.home_fragment,doctorProfile).commit();
+                                break;
+                            case R.id.donorsuccess:
+//                                manager.beginTransaction().replace(R.id.home_fragment,doctorProfile).commit();
                                 break;
                         }
-                    return true;
+                        return true;
                     }
                 });
     }

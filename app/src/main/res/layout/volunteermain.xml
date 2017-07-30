@@ -22,7 +22,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/menu" />
+        app:menu="@menu/menu2" />
 
 
 
