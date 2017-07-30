@@ -67,92 +67,88 @@ public class DoctorFragment extends Fragment {
         final EditText ill = (EditText) layoutinflater.findViewById(R.id.ill);
         final EditText dob = (EditText) layoutinflater.findViewById(R.id.dob);
         final EditText doc_id = (EditText) layoutinflater.findViewById(R.id.doc_id);
-        try{
-            URL url = new URL("13.126.178.24/cfg/add_child");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+
         Task T = new Task();
-        T.doInBackground("13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
+        T.doInBackground("http://13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
     }
-        // Create data variable for sent values to server
-       class Task extends AsyncTask<String, Integer, Long> {
+    // Create data variable for sent values to server
+    class Task extends AsyncTask<String, Integer, Long> {
 
 
 
-            @Override
-            protected Long doInBackground(String... param) {
-                String data = null;
-                try {
-                    data = URLEncoder.encode("parent_id", "UTF-8")
-                            + "=" + URLEncoder.encode(param[1], "UTF-8");
+        @Override
+        protected Long doInBackground(String... param) {
+            String data = null;
+            try {
+                data = URLEncoder.encode("parent_id", "UTF-8")
+                        + "=" + URLEncoder.encode(param[1], "UTF-8");
 
-                    data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
-                            + URLEncoder.encode(param[2], "UTF-8");
+                data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
+                        + URLEncoder.encode(param[2], "UTF-8");
 
-                    data += "&" + URLEncoder.encode("parent_name", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(param[3]), "UTF-8");
+                data += "&" + URLEncoder.encode("parent_name", "UTF-8")
+                        + "=" + URLEncoder.encode(String.valueOf(param[3]), "UTF-8");
 
-                    data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(param[4]), "UTF-8");
+                data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
+                        + "=" + URLEncoder.encode(String.valueOf(param[4]), "UTF-8");
 
-                    data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(param[5]), "UTF-8");
+                data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
+                        + "=" + URLEncoder.encode(String.valueOf(param[5]), "UTF-8");
 
-                    data += "&" + URLEncoder.encode("dob", "UTF-8")
-                            + "=" + URLEncoder.encode(String.valueOf(param[6]), "UTF-8");
+                data += "&" + URLEncoder.encode("dob", "UTF-8")
+                        + "=" + URLEncoder.encode(String.valueOf(param[6]), "UTF-8");
 
-                    data += "&" + URLEncoder.encode("ill", "UTF-8")
-                            + "=" + URLEncoder.encode(param[7], "UTF-8");
-
-
-                }
-                catch(Exception e){}
-
-                String text = "";
-                BufferedReader reader = null;
-
-                // Send data
-                try {
-
-                    // Defined URL  where to send data
-                    URL url = new URL(param[0]);
-
-                    // Send POST data request
-                    URLConnection conn = url.openConnection();
-                    conn.setDoOutput(true);
-                    OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-                    wr.write(data);
-                    wr.flush();
-
-                    // Get the server response
-
-                    reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    StringBuilder sb = new StringBuilder();
-                    String line = null;
-
-                    // Read Server Response
-                    while ((line = reader.readLine()) != null) {
-                        // Append server response in string
-                        sb.append(line + "\n");
-                    }
+                data += "&" + URLEncoder.encode("ill", "UTF-8")
+                        + "=" + URLEncoder.encode(param[7], "UTF-8");
 
 
-                    text = sb.toString();
-                } catch (Exception ex) {
-
-                } finally {
-                    try {
-
-                        reader.close();
-                    } catch (Exception ex) {
-                    }
-                }
-                return null;
             }
+            catch(Exception e){}
 
+            String text = "";
+            BufferedReader reader = null;
+
+            // Send data
+            try {
+
+                // Defined URL  where to send data
+                URL url = new URL(param[0]);
+
+                // Send POST data request
+                URLConnection conn = url.openConnection();
+                conn.setDoOutput(true);
+                OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+                wr.write(data);
+                wr.flush();
+
+                // Get the server response
+
+                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+
+                // Read Server Response
+                while ((line = reader.readLine()) != null) {
+                    // Append server response in string
+                    sb.append(line + "\n");
+                }
+
+
+                text = sb.toString();
+            } catch (Exception ex) {
+
+            } finally {
+                try {
+
+                    reader.close();
+                } catch (Exception ex) {
+                }
+            }
+            return null;
         }
-        // Show response on activity
+
+    }
+    // Show response on activity
 
 
 }
