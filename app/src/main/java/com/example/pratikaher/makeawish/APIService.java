@@ -22,7 +22,7 @@ public interface APIService {
     Call<List<BeerResponse>> getdata();
 
     @Headers({ "Content-Type: application/json;charset=UTF-8"})
-    @POST("/users/newuser")
+    @POST("cfg/add_child.php")
     Call<VolunteerPOJOClass> createUser(@Body VolunteerPOJOClass user);
 
 }

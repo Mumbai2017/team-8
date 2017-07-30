@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import java.net.MalformedURLException;
+
 public class MainActivity extends AppCompatActivity {
 
     FragmentManager manager = getSupportFragmentManager();
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     DoctorFragment fragment = new DoctorFragment();
     DoctorHistory doctorHistory=new DoctorHistory();
     DoctorProfile doctorProfile=new DoctorProfile();
+
+    public MainActivity() throws MalformedURLException {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

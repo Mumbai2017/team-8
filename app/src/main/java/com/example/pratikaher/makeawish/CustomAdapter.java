@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,6 +19,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     List<String> childlist;
     Boolean volunteer=false;
     Boolean donor=false;
+
+
     public CustomAdapter( List<String> childlist) {
 
         this.childlist=childlist;
@@ -51,6 +54,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @Override
     public void onBindViewHolder(CustomAdapter.ViewHolder holder, int position) {
         holder.childname.setText(childlist.get(position));
+
     }
 
     @Override
@@ -64,7 +68,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            childname=(TextView)itemView.findViewById(R.id.info_text);
+            childname=(TextView)itemView.findViewById(R.id.childname);
+
         }
 
     }

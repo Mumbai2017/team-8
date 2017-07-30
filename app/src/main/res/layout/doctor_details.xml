@@ -3,12 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
         <ImageView
+            android:padding="10dp"
             android:id="@+id/doctor_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/img"
             android:layout_gravity="center"
             />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/doctorId_label"
@@ -16,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/doctor_image"
             android:text="Doctor Id:"
+            android:textStyle="bold"
             android:textSize="20dp"
             />
 
@@ -23,6 +29,7 @@
             android:id="@+id/doctorId_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="MQ791"
             android:layout_alignRight="@id/doctorId_label"
             android:textSize="20dp"
 
@@ -33,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:labelFor="@id/doctorId_tv"
+            android:textStyle="bold"
             android:text="Doctor Name:"
             android:layout_below="@id/doctorId_label"
             android:textSize="20dp"
@@ -43,6 +51,7 @@
         <TextView
             android:id="@+id/doctorName_tv"
             android:layout_width="wrap_content"
+            android:text="Rahul Shinde"
             android:layout_height="wrap_content"
             android:layout_alignRight="@id/doctorName_label"
             android:textSize="20dp"
@@ -56,6 +65,7 @@
             android:layout_height="wrap_content"
             android:labelFor="@id/doctorId_tv"
             android:text="Doctor Email:"
+            android:textStyle="bold"
             android:layout_below="@id/doctorName_label"
             android:textSize="20dp"
 
@@ -63,6 +73,7 @@
 
         <TextView
             android:id="@+id/doctorEmail_tv"
+            android:text="rahulshinde@gmail.com"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@id/doctorEmail_label"
@@ -75,6 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:labelFor="@id/doctorId_tv"
+            android:textStyle="bold"
             android:text="Hospital:"
             android:layout_below="@id/doctorName_label"
             android:textSize="20dp"
@@ -85,6 +97,7 @@
             android:id="@+id/hospital_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Sanjeevani Hospital"
             android:layout_alignRight="@id/doctorEmail_label"
             android:textSize="20dp"
 

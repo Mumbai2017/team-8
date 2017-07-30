@@ -1,158 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Child Details"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"/>
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TableRow>
                 <TextView
+                    android:typeface="serif"
                     android:text="Name"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/name"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:typeface="serif"
                     android:text="Date of birth"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/dob"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:maxLength="10"
                     android:hint=""
                     />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:typeface="serif"
                     android:text="Illness"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/ill"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:typeface="serif"
+
                     android:text="Doctor name"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/docname"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:typeface="serif"
+
                     android:text="Parent Name"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/pname"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
             <TableRow>
                 <TextView
+                    android:typeface="serif"
                     android:text="Parent ID"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/pid"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
 
             <TableRow>
                 <TextView
-                    android:text="Docotor ID"
-                    android:textSize="25dp"
+                    android:typeface="serif"
+                    android:text="Doctor ID"
+                    android:textSize="20dp"
 
                     />
                 <TextView
                     android:text=":"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
 
                     />
                 <EditText
                     android:id="@+id/doc_id"
                     android:inputType="text"
                     android:layout_weight="0.1"
-                    android:textSize="25dp"
+                    android:textSize="20dp"
                     android:hint=""
                     />
             </TableRow>
@@ -167,19 +189,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:padding="25dp"
+        android:padding="20dp"
+        android:textColor="#207068"
+        android:background="#f8f8ff"
         android:text="SUBMIT"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GO BACK"
-            android:layout_gravity="center_horizontal"
-            android:textSize="25dp"
-            android:padding="35dp"
-            android:id="@+id/button1"
-            android:layout_marginTop="20dp"
-            android:visibility="gone"
-            />
+
     </LinearLayout>
+</ScrollView>

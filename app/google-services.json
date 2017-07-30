@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "278508307463",
+    "firebase_url": "https://make-34655.firebaseio.com",
+    "project_id": "make-34655",
+    "storage_bucket": "make-34655.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278508307463:android:1a3eb8699f83e281",
+        "android_client_info": {
+          "package_name": "com.example.pratikaher.makeawish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278508307463-3786im41r34rchak6kmqhrova7606pci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNDNuy5dsyGdyb9AMzanV-7E4lU_g6Rlg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
