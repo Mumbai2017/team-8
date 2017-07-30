@@ -68,37 +68,37 @@ public class DoctorFragment extends Fragment {
         final EditText dob = (EditText) layoutinflater.findViewById(R.id.dob);
         final EditText doc_id = (EditText) layoutinflater.findViewById(R.id.doc_id);
 
-        new Task().execute("http://13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
-    }
+      //  new Task().execute("http://13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
+    //}
     // Create data variable for sent values to server
-    class Task extends AsyncTask<String, Integer, Long> {
+   // class Task extends AsyncTask<String, Integer, Long> {
 
 
 
-        @Override
-        protected Long doInBackground(String... param) {
-            String data = null;
+        //@Override
+       // protected Long doInBackground(String... param) {
+            String data = "";
             try {
                 data = URLEncoder.encode("parent_id", "UTF-8")
-                        + "=" + URLEncoder.encode(param[1], "UTF-8");
+                        + "=" + URLEncoder.encode(pid.getText().toString(), "UTF-8");
 
                 data += "&" + URLEncoder.encode("child_name", "UTF-8") + "="
-                        + URLEncoder.encode(param[2], "UTF-8");
+                        + URLEncoder.encode(name.getText().toString(), "UTF-8");
 
                 data += "&" + URLEncoder.encode("parent_name", "UTF-8")
-                        + "=" + URLEncoder.encode(String.valueOf(param[3]), "UTF-8");
+                        + "=" + URLEncoder.encode(pname.getText().toString(), "UTF-8");
 
                 data += "&" + URLEncoder.encode("doctor_name", "UTF-8")
-                        + "=" + URLEncoder.encode(String.valueOf(param[4]), "UTF-8");
+                        + "=" + URLEncoder.encode(docname.getText().toString(), "UTF-8");
 
                 data += "&" + URLEncoder.encode("doctor_id", "UTF-8")
-                        + "=" + URLEncoder.encode(String.valueOf(param[5]), "UTF-8");
+                        + "=" + URLEncoder.encode(doc_id.getText().toString(), "UTF-8");
 
                 data += "&" + URLEncoder.encode("dob", "UTF-8")
-                        + "=" + URLEncoder.encode(String.valueOf(param[6]), "UTF-8");
+                        + "=" + URLEncoder.encode(dob.getText().toString(), "UTF-8");
 
-                data += "&" + URLEncoder.encode("ill", "UTF-8")
-                        + "=" + URLEncoder.encode(param[7], "UTF-8");
+                data += "&" + URLEncoder.encode("illness", "UTF-8")
+                        + "=" + URLEncoder.encode(ill.getText().toString(), "UTF-8");
 
 
             }
@@ -113,7 +113,7 @@ public class DoctorFragment extends Fragment {
             try {
 
                 // Defined URL  where to send data
-                URL url = new URL(param[0]);
+                URL url = new URL("http://13.126.178.24/cfg/add_child.php");
 
                 // Send POST data request
                 URLConnection conn = url.openConnection();
@@ -146,12 +146,12 @@ public class DoctorFragment extends Fragment {
                 } catch (Exception ex) {
                 }
             }
-            return null;
+           //return null;
         }
 
     }
     // Show response on activity
 
 
-}
+
 
