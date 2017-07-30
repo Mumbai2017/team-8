@@ -68,8 +68,7 @@ public class DoctorFragment extends Fragment {
         final EditText dob = (EditText) layoutinflater.findViewById(R.id.dob);
         final EditText doc_id = (EditText) layoutinflater.findViewById(R.id.doc_id);
 
-        Task T = new Task();
-        T.doInBackground("http://13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
+        new Task().execute("http://13.126.178.24/cfg/add_child.php",name.getText().toString(),pid.getText().toString(),pname.getText().toString(),docname.getText().toString(),ill.getText().toString(),dob.getText().toString(),doc_id.getText().toString());
     }
     // Create data variable for sent values to server
     class Task extends AsyncTask<String, Integer, Long> {
@@ -105,6 +104,8 @@ public class DoctorFragment extends Fragment {
             }
             catch(Exception e){}
 
+            System.out.println(data);
+
             String text = "";
             BufferedReader reader = null;
 
@@ -118,12 +119,13 @@ public class DoctorFragment extends Fragment {
                 URLConnection conn = url.openConnection();
                 conn.setDoOutput(true);
                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
+
                 wr.write(data);
                 wr.flush();
 
                 // Get the server response
 
-                reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                /*reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuilder sb = new StringBuilder();
                 String line = null;
 
@@ -131,12 +133,12 @@ public class DoctorFragment extends Fragment {
                 while ((line = reader.readLine()) != null) {
                     // Append server response in string
                     sb.append(line + "\n");
-                }
+                }*/
 
 
-                text = sb.toString();
+                //text = sb.toString();
             } catch (Exception ex) {
-
+                ex.printStackTrace();
             } finally {
                 try {
 
