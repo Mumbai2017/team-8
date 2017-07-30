@@ -35,16 +35,10 @@ public class DoctorHistory extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        childlist.clear();
-        childlist.add("123");
-        childlist.add("bro");
-        childlist.add("sarang");
 
-        Retrofit retrofit=new Retrofit.Builder()
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://13.126.178.24/")
-                .build();
+
+
+/*
 
         APIService apiServiceClass=retrofit.create(APIService.class);
 
@@ -63,6 +57,7 @@ public class DoctorHistory extends Fragment{
         });
 
 
+*/
 
 
 
