@@ -1,10 +1,10 @@
 package com.example.pratikaher.makeawish;
 
-import android.support.v4.app.Fragment;
-
 /**
- * Created by pratikaher on 30/07/17.
+ * Created by Jayesh on 30-07-2017.
  */
 
-class DonorSuccess extends Fragment{
+class DonorSuccess {
+
+
 }
